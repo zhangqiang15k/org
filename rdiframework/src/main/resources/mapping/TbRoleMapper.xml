@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.dao.TbRoleMapper" >
+  <resultMap id="BaseResultMap" type="com.jk.model.TbRole" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="realName" property="realname" jdbcType="VARCHAR" />
+    <result column="enabled" property="enabled" jdbcType="INTEGER" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="roleType" property="roletype" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, code, realName, enabled, description, roleType
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_role
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tb_role
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jk.model.TbRole" >
+    insert into tb_role (id, code, realName, 
+      enabled, description, roleType
+      )
+    values (#{id,jdbcType=INTEGER}, #{code,jdbcType=VARCHAR}, #{realname,jdbcType=VARCHAR}, 
+      #{enabled,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, #{roletype,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.jk.model.TbRole" >
+    insert into tb_role
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="realname != null" >
+        realName,
+      </if>
+      <if test="enabled != null" >
+        enabled,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="roletype != null" >
+        roleType,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null" >
+        #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null" >
+        #{enabled,jdbcType=INTEGER},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="roletype != null" >
+        #{roletype,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jk.model.TbRole" >
+    update tb_role
+    <set >
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null" >
+        realName = #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null" >
+        enabled = #{enabled,jdbcType=INTEGER},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="roletype != null" >
+        roleType = #{roletype,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jk.model.TbRole" >
+    update tb_role
+    set code = #{code,jdbcType=VARCHAR},
+      realName = #{realname,jdbcType=VARCHAR},
+      enabled = #{enabled,jdbcType=INTEGER},
+      description = #{description,jdbcType=VARCHAR},
+      roleType = #{roletype,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="roleList" parameterType="com.jk.model.TbRole" resultMap="BaseResultMap">
+  	select * from tb_role
+  	<where>
+  		<if test="roletype != null">
+  			and	roleType = #{roletype,jdbcType=VARCHAR}
+  		</if>
+  		<if test="realname != null" >
+	    	and realName like '%${realname}%'
+	    </if>
+  	</where>
+  </select>
+  <delete id="deleteIds" parameterType="java.util.List">
+  	delete from tb_role where id in 
+  	<foreach collection="list"  item="ids" open="(" separator="," close=")"  >
+           #{ids}
+      </foreach>
+  </delete>
+</mapper>

@@ -1,0 +1,12 @@
+[ERROR][2018-12-14 15:08:10,110][com.alibaba.druid.pool.DruidAbstractDataSource]maxIdle is deprecated
+[INFO][2018-12-14 15:08:10,244][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+[INFO][2018-12-14 15:08:28,629][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+[ERROR][2018-12-14 15:09:13,462][com.alibaba.druid.pool.DruidAbstractDataSource]maxIdle is deprecated
+[INFO][2018-12-14 15:09:13,597][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+[INFO][2018-12-14 15:09:28,686][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+[ERROR][2018-12-14 15:13:57,173][com.alibaba.druid.pool.DruidAbstractDataSource]maxIdle is deprecated
+[INFO][2018-12-14 15:13:57,332][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+[INFO][2018-12-14 15:14:07,701][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+[ERROR][2018-12-14 15:17:02,403][com.alibaba.druid.pool.DruidAbstractDataSource]maxIdle is deprecated
+[INFO][2018-12-14 15:17:02,524][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+[INFO][2018-12-14 15:17:09,276][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed

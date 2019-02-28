@@ -1,0 +1,24 @@
+[{
+	"id":1,
+	"text":"员工管理",
+	"iconCls":"icon-vcard",
+	"url":"/employee/employeeList.jsp"
+},{
+	"id":2,
+	"text":"用户管理",
+	"iconCls":"icon-group",
+	"url":"http://www.baidu.com"
+},{
+	"id":3,
+	"text":"角色管理",
+	"iconCls":"icon-group-link",
+	"url":"/role/roleList.jsp"
+},{
+	"id":4,
+	"text":"组织机构管理",
+	"iconCls":"icon-save"
+},{
+	"id":5,
+	"text":"模块管理",
+	"iconCls":"icon-tab"
+}]
